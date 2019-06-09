@@ -6,7 +6,7 @@ import thunk from "redux-thunk";
 import promise from "redux-promise-middleware";
 
 import reducer from "./reducers";
-// import fetchTweets from "./sagas/tweets";
+ import fetchTweets from "./sagas/tweets";
 import rootSaga from "./sagas/sagas";
 
 const sagaMiddleware = createSagaMiddleware();
@@ -14,6 +14,6 @@ const sagaMiddleware = createSagaMiddleware();
 const store = createStore(reducer, applyMiddleware(logger, sagaMiddleware));
 
 sagaMiddleware.run(rootSaga);
-// const action = type => store.dispatch({ type });
+ const action = type => store.dispatch({ type });
 
 export default store;
